@@ -14,9 +14,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "webpack-dev-server",
+    "prebuild": "npm install",
     "build": "webpack --p",
     "test": "jest",
-    "lintOLD": "eslint src/**",
     "lint": "eslint --ext .jsx --ext .js src/**"
   },
   "dependencies": {

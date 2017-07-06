@@ -1,6 +1,5 @@
 var path = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
-// var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 
@@ -38,50 +37,27 @@ var common = {
             }
           ]
       },
-      { test   : /\.(png|jpg)$/, loader : 'url-loader' }, 
-        
+      { test   : /\.(png|jpg)$/, loader : 'url-loader' }
     ]
   },  
   plugins: [
     new HtmlwebpackPlugin({ 
       title: 'Sample Application',
       template: path.resolve(ROOT_PATH, './index.html') 
-    }),
-    // new ExtractTextPlugin('gallery.css'),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    })
+    })    
   ]
 };
 
   
 if(TARGET === 'start' || !TARGET) {  
-  module.exports = merge(common, {
-    
+  module.exports = merge(common, {    
     devtool: 'source-map', 
     devServer: {
       historyApiFallback: true,
       hot: true,
       host: '0.0.0.0',
       inline: true,
-      port:8081,
-      proxy: {
-      '/api/*': {
-        host: '0.0.0.0',
-        target: 'http://jsonplaceholder.typicode.com',
-        pathRewrite: {
-          '/api' : '',
-        }
-      }
-    }
-      
+      port:8081
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin()
@@ -91,6 +67,3 @@ if(TARGET === 'start' || !TARGET) {
 else{
    module.exports = common;
 }
-
-// devtool: 'source-map', 
-// devtool: 'eval-source-map', 
