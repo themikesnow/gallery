@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['<Image /> Match Snapshot 1'] = `
+<div
+  className="image"
+  onClick={[Function]}
+>
+  <img
+    alt="Thumbnail"
+    src={undefined}
+  />
+</div>
+`;

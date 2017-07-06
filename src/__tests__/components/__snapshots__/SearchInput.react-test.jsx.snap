@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchInput /> Match Snapshot 1`] = `
+<div
+  className="search-input"
+>
+  <div
+    className="controls"
+  >
+    <input
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Enter keyword..."
+      type="text"
+      value=""
+    />
+    <button
+      className="btn btn-submit disabled"
+      onClick={[Function]}
+    >
+      <span>
+        Search
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<SearchInput /> Match Snapshot 2`] = `
+<div
+  className="search-input"
+>
+  <div
+    className="controls"
+  >
+    <input
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Enter keyword..."
+      type="text"
+      value=""
+    />
+    <button
+      className="btn btn-submit disabled"
+      onClick={[Function]}
+    >
+      <i
+        className="fa fa-refresh fa-spin fa-lg fa-fw"
+      />
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,37 @@
+.gallery{
+  width: 80%;
+  margin: auto;
+
+  .alert{
+    margin-top: 10px;
+    padding: 20px;
+  }    
+}
+
+.images{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.image {
+    margin: 5px;
+    
+    width: 180px;
+    display: inline-block;
+
+    img{
+      width: 100%;
+      height: auto;
+      max-height: 135px;
+    }
+
+    &.active{
+      border-bottom: 5px solid $brand-primary;
+    }
+
+    &:hover{
+      border-bottom: 3px solid #777;
+      cursor: pointer;
+    }
+
+}

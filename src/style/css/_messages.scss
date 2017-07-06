@@ -1,0 +1,4 @@
+.alert{
+  background-color: $color-error;
+  border: 1px darken($color-error, 10%) solid;
+}

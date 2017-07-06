@@ -1,0 +1,97 @@
+{
+  "name": "gallery",
+  "version": "1.0.0",
+  "description": "Sample App",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://miguelnievesacevedo@bitbucket.org/miguelnievesacevedo/blackmamba-ui.git"
+  },
+  "keywords": [
+    "Blackmamba"
+  ],
+  "author": "Miguel A. Nieves Acevedo",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --p",
+    "test": "jest",
+    "lintOLD": "eslint src/**",
+    "lint": "eslint --ext .jsx --ext .js src/**"
+  },
+  "dependencies": {
+    "react": "15.4.2",
+    "react-dom": "15.4.2"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "express": "4.15.2",
+    "http-proxy-middleware": "0.17.4",
+    "webpack": "3.0.0",
+    "webpack-dev-server": "2.5.0",
+    "webpack-merge": "4.1.0",
+    "babel-core": "6.24.0",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-es2015": "6.24.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-loader": "7.1.1",
+    "flux": "3.1.2",
+    "history": "^4.5.0",
+    "css-loader": "0.28.4",
+    "file-loader": "0.11.2",
+    "font-loader": "0.1.2",
+    "html-loader": "0.4.5",
+    "json-loader": "0.5.4",
+    "style-loader": "0.18.2",
+    "sass-loader": "6.0.6",
+    "svg-loader": "0.0.2",
+    "url-loader": "0.5.9",
+    "resolve-url-loader": "2.1.0",
+    "keymirror": "0.1.1",
+    "classnames": "2.2.5",
+    "immutable": "3.8.1",
+    "node-sass": "4.5.3",
+    "font-awesome": "4.7.0",
+    "html-webpack-plugin": "2.29.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint": "3.19.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-react": "6.10.3",
+    "eslint-plugin-babel": "4.1.1",
+    "babel-eslint": "7.2.1",
+    "react-addons-shallow-compare": "15.5.2",
+    "chai": "3.5.0",
+    "enzyme": "2.8.2",
+    "jest": "20.0.4",
+    "jest-cli": "20.0.4",
+    "react-addons-test-utils": "15.4.2",
+    "sinon": "^2.1.0",
+    "react-test-renderer": "15.4.2"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "/src/dispatcher/",
+      "/src/utils/",
+      "main.jsx",
+      "src/__tests__/components/__snapshots__",
+      "/node_modules/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  }
+}

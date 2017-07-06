@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Gallery /> Match Snapshot 1`] = `
+<div
+  className="gallery"
+>
+  <div
+    className="col-centered REVIEW"
+  >
+    <div
+      className="search-input"
+    >
+      <div
+        className="controls"
+      >
+        <input
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          placeholder="Enter keyword..."
+          type="text"
+          value=""
+        />
+        <button
+          className="btn btn-submit disabled"
+          onClick={[Function]}
+        >
+          <span>
+            Search
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div
+        className="slider"
+      >
+        <button
+          className="btn btn-previous disabled"
+          onClick={[Function]}
+        >
+          Previuos
+        </button>
+        <button
+          className="btn btn-next disabled"
+          onClick={[Function]}
+        >
+          Next
+        </button>
+        <div
+          className="loading"
+        >
+          <i
+            className="fa fa-refresh fa-spin fa-3x fa-fw"
+          />
+        </div>
+        <img
+          alt="Slider"
+          className="hidden"
+          onLoad={[Function]}
+          src="DummyPath"
+        />
+      </div>
+      <div
+        className="images"
+      >
+        <div
+          className="image active"
+          onClick={[Function]}
+        >
+          <img
+            alt="Thumbnail"
+            src={undefined}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

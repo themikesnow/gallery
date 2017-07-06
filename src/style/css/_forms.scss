@@ -1,0 +1,21 @@
+
+input[type=text], button {
+      padding: 8px;
+}
+
+button{
+    background-color: $brand-secondary;
+    border: 1px $border-color-base solid;
+    line-height: 1.43857;
+
+    &.disabled{
+        &:hover{
+            cursor: not-allowed;
+        }
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+    
+}

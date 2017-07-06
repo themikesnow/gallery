@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GallerySection /> Match Snapshot 1`] = `
+<div
+  className="gallery-section"
+>
+  <div
+    className="gallery"
+  >
+    <div
+      className="col-centered REVIEW"
+    >
+      <div
+        className="search-input"
+      >
+        <div
+          className="controls"
+        >
+          <input
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            placeholder="Enter keyword..."
+            type="text"
+            value=""
+          />
+          <button
+            className="btn btn-submit disabled"
+            onClick={[Function]}
+          >
+            <span>
+              Search
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading /> Match Snapshot 1`] = `
+<div
+  className="loading"
+>
+  <i
+    className="fa fa-refresh fa-spin fa-3x fa-fw"
+  />
+</div>
+`;
+
+exports[`<Loading /> Match Snapshot 2`] = `
+<i
+  className="fa fa-refresh fa-spin fa-lg fa-fw"
+/>
+`;

@@ -1,0 +1,18 @@
+.navbar{
+  background-color: $brand-primary;
+  height: 50px;
+
+  .content{
+    color: $brand-secondary;
+    padding: 15px 15px;
+    display: inline-block;
+
+    .brand{
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+  .icon-logo{
+    padding: 0 5px;
+  }
+}
