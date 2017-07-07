@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import GalleryActionCreators from '../../actions/GalleryActionCreators';
 import SearchInput from '../SearchInput/SearchInput.react';
 import Image from './Image.react';
 import Slider from './Slider.react';
@@ -13,6 +12,10 @@ export default class Gallery extends Component {
     isPreviousEnabled: React.PropTypes.bool,
     isNextEnabled: React.PropTypes.bool,
     isBusy: React.PropTypes.bool,
+    onSearch: React.PropTypes.func.isRequired,
+    onPreviousImage: React.PropTypes.func.isRequired,
+    onNextImage: React.PropTypes.func.isRequired,
+    onSelectImage: React.PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -26,16 +29,12 @@ export default class Gallery extends Component {
     isBusy: false,
   };
 
-  onSearch(text) {
-    GalleryActionCreators.search(text);
-  }
-
   render() {
     return (
       <div className="gallery">
         <div className="col-centered REVIEW">
           <SearchInput
-            onSearch={this.onSearch}
+            onSearch={this.props.onSearch}
             isBusy={this.props.isBusy}
           />
         </div>
@@ -48,10 +47,18 @@ export default class Gallery extends Component {
                   image={this.props.images[this.props.selectedImage]}
                   isPreviousEnabled={this.props.isPreviousEnabled}
                   isNextEnabled={this.props.isNextEnabled}
+                  onPreviousImage={this.props.onPreviousImage}
+                  onNextImage={this.props.onNextImage}
                 />
                 <div className="images">
-                  {this.props.images.map((i, index) => ( // eslint-disable-next-line react/no-array-index-key
-                    <Image key={index} image={i} index={index} isActive={this.props.selectedImage === index} />
+                  {this.props.images.map((i, index) => (
+                    <Image
+                      key={index} // eslint-disable-line react/no-array-index-key
+                      image={i}
+                      index={index}
+                      isActive={this.props.selectedImage === index}
+                      onSelectImage={this.props.onSelectImage}
+                    />
                   ))}
                 </div>
               </div>

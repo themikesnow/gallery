@@ -11,7 +11,7 @@ const image = {
 };
 
 describe('<Image />', () => {
-  it('Match Snapshot', () => {    
+  it('Match Snapshot', () => {
     const component = renderer.create(<Image image={image} isActive={false} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

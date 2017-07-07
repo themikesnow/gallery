@@ -1,8 +1,9 @@
 import keyMirror from 'keymirror';
 
-export const LocaleTypes = {
-  EN: 'en',
-  ES: 'es',
+const C_ITEMS_PER_PAGE = 10;
+
+export const Config = {
+  REST_API: `https://www.flickr.com/services/rest/?api_key=097e9fb9fa9ab34a7eaa9d5b527e9963&per_page=${C_ITEMS_PER_PAGE}&format=json&nojsoncallback=?&extras=url_q,url_o&method=flickr.photos.search`,
 };
 
 export const AppEventTypes = {
