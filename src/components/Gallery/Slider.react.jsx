@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-
-import GalleryActionCreators from '../../actions/GalleryActionCreators';
 import Loading from '../Loading/Loading.react';
 import ImageProps from '../../constants/PropTypes';
 
@@ -11,6 +9,8 @@ export default class Slider extends Component {
     image: React.PropTypes.shape(ImageProps),
     isPreviousEnabled: React.PropTypes.bool,
     isNextEnabled: React.PropTypes.bool,
+    onPreviousImage: React.PropTypes.func.isRequired,
+    onNextImage: React.PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -34,14 +34,6 @@ export default class Slider extends Component {
     }
   }
 
-  onClickPrevious() {
-    GalleryActionCreators.goToPreviousImage();
-  }
-
-  onClickNext() {
-    GalleryActionCreators.goToNextImage();
-  }
-
   onLoad() {
     setTimeout(() => { // Added delay to make sure loading component is displayed...
       this.setState({ isLoading: false });
@@ -55,10 +47,10 @@ export default class Slider extends Component {
 
     return (
       <div className="slider">
-        <button className={classnames({ 'btn btn-previous': true, disabled: !this.props.isPreviousEnabled })} onClick={this.onClickPrevious}>
+        <button className={classnames({ 'btn btn-previous': true, disabled: !this.props.isPreviousEnabled })} onClick={this.props.onPreviousImage}>
           Previuos
         </button>
-        <button className={classnames({ 'btn btn-next': true, disabled: !this.props.isNextEnabled })} onClick={this.onClickNext}>
+        <button className={classnames({ 'btn btn-next': true, disabled: !this.props.isNextEnabled })} onClick={this.props.onNextImage}>
           Next
         </button>
 

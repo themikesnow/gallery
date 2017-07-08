@@ -17,6 +17,7 @@ exports[`<GallerySection /> Match Snapshot 1`] = `
           className="controls"
         >
           <input
+            className="search-input-control"
             onChange={[Function]}
             onKeyPress={[Function]}
             placeholder="Enter keyword..."
@@ -31,6 +32,63 @@ exports[`<GallerySection /> Match Snapshot 1`] = `
               Search
             </span>
           </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div
+          className="slider"
+        >
+          <button
+            className="btn btn-previous disabled"
+            onClick={[Function]}
+          >
+            Previuos
+          </button>
+          <button
+            className="btn btn-next disabled"
+            onClick={[Function]}
+          >
+            Next
+          </button>
+          <div
+            className="loading"
+          >
+            <i
+              className="fa fa-refresh fa-spin fa-3x fa-fw"
+            />
+          </div>
+          <img
+            alt="Slider"
+            className="hidden"
+            onLoad={[Function]}
+            src="https://dummy.com/123/123_o.jpg"
+          />
+        </div>
+        <div
+          className="images"
+        >
+          <div
+            className="image active"
+            id="image-0"
+            onClick={[Function]}
+          >
+            <img
+              alt="Thumbnail"
+              src="https://dummy.com/123/123_q.jpg"
+            />
+          </div>
+          <div
+            className="image"
+            id="image-1"
+            onClick={[Function]}
+          >
+            <img
+              alt="Thumbnail"
+              src="https://dummy.com/456/456_q.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { expect as expectChai } from 'chai';
-import sinon from 'sinon';
+// import sinon from 'sinon';
 
 import SearchInput from '../../components/SearchInput/SearchInput.react';
 
@@ -32,12 +32,12 @@ describe('<SearchInput />', () => {
   });
 
   it('should call onChange', () => {
-    sinon.spy(SearchInput.prototype, 'onChange');
+    const theValue = 'test';
     const myMock = jest.fn();
     const wrapper = mount(<SearchInput onSearch={myMock} />);
 
-    wrapper.find('.search-input input').simulate('change', { target: { value: 'test' } });
-    expectChai(SearchInput.prototype.onChange).to.have.property('callCount', 1);
+    wrapper.find('.search-input-control').simulate('change', { target: { value: theValue } });
+    expectChai(wrapper.state().value).to.equal(theValue);
   });
 
   it('should call onSearch when enter pressed on the search input', () => {

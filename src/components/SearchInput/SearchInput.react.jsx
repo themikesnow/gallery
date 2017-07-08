@@ -54,6 +54,7 @@ export default class SearchInput extends React.Component {
       <div className="search-input">
         <div className="controls">
           <input
+            className="search-input-control"
             type="text"
             value={this.state.value}
             placeholder="Enter keyword..."

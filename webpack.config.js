@@ -12,7 +12,7 @@ var BUILD_PATH = path.resolve(ROOT_PATH, './dist');
 process.env.BABEL_ENV = TARGET;
 
 var common = {
-  entry: path.resolve(APP_PATH, './main.jsx'),
+  entry: path.resolve(APP_PATH, './index.jsx'),
   resolve: { extensions: ['.js', '.jsx', '.json'] },
   output: { path: BUILD_PATH, filename: 'bundle.js', publicPath: '/dist/' },
   module: {
