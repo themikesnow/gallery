@@ -28,6 +28,7 @@ describe('gallery reducer', () => {
       searchText: 'Dummy Text',
       isBusy: true,
       selectedImage: 0,
+      images: null,
     });
   });
 
