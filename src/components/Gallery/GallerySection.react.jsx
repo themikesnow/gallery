@@ -5,18 +5,19 @@ import Gallery from './Gallery.react';
 import ImageProps from '../../constants/PropTypes';
 
 
-class GallerySection extends Component {
+export class GallerySection extends Component {
 
   static propTypes = {
     images: React.PropTypes.arrayOf(React.PropTypes.shape(ImageProps)),
     selectedImage: React.PropTypes.number,
     isPreviousEnabled: React.PropTypes.bool,
     isNextEnabled: React.PropTypes.bool,
-    isBusy: React.PropTypes.bool.isRequired,
+    isBusy: React.PropTypes.bool,
     dispatch: React.PropTypes.func.isRequired,
   };
 
   static defaultProps = {
+    isBusy: false,
     images: null,
     selectedImage: 0,
     isPreviousEnabled: false,

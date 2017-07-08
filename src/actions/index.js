@@ -1,4 +1,6 @@
+import fetch from 'isomorphic-fetch';
 import { ActionTypes, Config } from '../constants/AppConstants';
+
 
 export const receiveImages = (response, errors) => ({
   type: ActionTypes.RECEIVE_IMAGES,
@@ -6,13 +8,18 @@ export const receiveImages = (response, errors) => ({
   errors,
 });
 
+export const requestImages = () => ({
+  type: ActionTypes.REQUEST_IMAGES,
+});
+
 export const fetchImages = (searchText, page) => (dispatch) => {
   const thePage = (page || 1);
-  return fetch(`${Config.REST_API}&text=${searchText}&page=${thePage}`)
+  const URL = `${Config.REST_API}/${Config.REST_DEFAULT_PARAMS}&text=${searchText}&page=${thePage}`;
+
+  dispatch(requestImages());
+  return fetch(URL)
           .then(response => response.json()).then((data) => {
             dispatch(receiveImages(data, null));
-          }).catch((err) => {
-            dispatch(receiveImages(null, err));
           });
 };
 
@@ -23,7 +30,8 @@ const onSearch = searchText => ({
 
 export const search = searchText => (dispatch) => {
   dispatch(onSearch(searchText));
-  dispatch(fetchImages(searchText, 0));
+
+  return dispatch(fetchImages(searchText, 0));
 };
 
 export const fetchMoreImagesIfNeeded = () => (dispatch, getState) => {

@@ -1,17 +1,19 @@
 import { ActionTypes } from '../constants/AppConstants';
+import InitialState from '../constants/initialStates/Gallery';
 
 
 function setSearchText(state, searchText) {
   return {
     ...state,
     searchText,
+    images: state.searchText !== searchText ? null : state.images,
     selectedImage: 0,
     isBusy: true,
   };
 }
 
 function isNextEnabledFunc(images, selectedImage) {
-  return images && selectedImage < (images.length - 1);
+  return !!images && selectedImage < (images.length - 1);
 }
 
 function isPreviousEnabledFunc(selectedImage) {
@@ -19,11 +21,17 @@ function isPreviousEnabledFunc(selectedImage) {
 }
 
 function setSelectedImage(state, theSelectedImage) {
+  if (theSelectedImage >= 0 && (!!state.images && theSelectedImage < state.images.length)) {
+    return {
+      ...state,
+      selectedImage: theSelectedImage,
+      isPreviousEnabled: isPreviousEnabledFunc(theSelectedImage),
+      isNextEnabled: isNextEnabledFunc(state.images, theSelectedImage),
+    };
+  }
+
   return {
     ...state,
-    selectedImage: theSelectedImage,
-    isPreviousEnabled: isPreviousEnabledFunc(theSelectedImage),
-    isNextEnabled: isNextEnabledFunc(state.images, theSelectedImage),
   };
 }
 
@@ -78,15 +86,7 @@ function moveToImage(state, step) {
   };
 }
 
-const images = (state = {
-  searchText: '',
-  selectedImage: 0,
-  isBusy: false,
-  images: null,
-  isPreviousEnabled: false,
-  isNextEnabled: false,
-  responseDetails: {},
-}, action) => {
+const images = (state = InitialState, action) => {
   switch (action.type) {
     case ActionTypes.SEARCH:
       return setSearchText(state, action.searchText);

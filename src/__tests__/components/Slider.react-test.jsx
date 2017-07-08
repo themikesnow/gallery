@@ -16,7 +16,7 @@ describe('<Slider />', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
-    component = renderer.create(<Slider image={image} onPreviousImage={onPreviousMock} onNextImage={onNextMock} />);
+    component = renderer.create(<Slider image={null} onPreviousImage={onPreviousMock} onNextImage={onNextMock} />);
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -45,6 +45,14 @@ describe('<Slider />', () => {
     const onNextMock = jest.fn();
     const wrapper = mount(<Slider image={image} onPreviousImage={onPreviousMock} onNextImage={onNextMock} />);
     wrapper.setProps({ image: { src: 'Another DummyPath' } });
+    expectChai(wrapper.state().isLoading).to.equal(true);
+  });
+
+  it('Does not updates loading flag when same image is received', () => {
+    const onPreviousMock = jest.fn();
+    const onNextMock = jest.fn();
+    const wrapper = mount(<Slider image={image} onPreviousImage={onPreviousMock} onNextImage={onNextMock} />);
+    wrapper.setProps({ image });
     expectChai(wrapper.state().isLoading).to.equal(true);
   });
 });

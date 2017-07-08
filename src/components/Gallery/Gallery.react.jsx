@@ -53,6 +53,7 @@ export default class Gallery extends Component {
                 <div className="images">
                   {this.props.images.map((i, index) => (
                     <Image
+                      id={`image-${index}`}
                       key={index} // eslint-disable-line react/no-array-index-key
                       image={i}
                       index={index}

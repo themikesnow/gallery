@@ -5,6 +5,7 @@ import ImageProps from '../../constants/PropTypes';
 export default class Image extends React.Component {
 
   static propTypes = {
+    id: React.PropTypes.string.isRequired,
     image: React.PropTypes.shape(ImageProps).isRequired,
     index: React.PropTypes.number,
     isActive: React.PropTypes.bool.isRequired,
@@ -32,7 +33,7 @@ export default class Image extends React.Component {
 
   render() {
     return (
-      <div ref={(c) => { this.image = c; }} className={classnames({ image: true, active: this.props.isActive })} onClick={this.onSelectImage}>
+      <div id={this.props.id} ref={(c) => { this.image = c; }} className={classnames({ image: true, active: this.props.isActive })} onClick={this.onSelectImage}>
         <img alt="Thumbnail" src={this.props.image.thumbnail} />
       </div>
     );

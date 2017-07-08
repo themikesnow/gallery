@@ -8,6 +8,7 @@ exports[`<SearchInput /> Match Snapshot 1`] = `
     className="controls"
   >
     <input
+      className="search-input-control"
       onChange={[Function]}
       onKeyPress={[Function]}
       placeholder="Enter keyword..."
@@ -34,6 +35,7 @@ exports[`<SearchInput /> Match Snapshot 2`] = `
     className="controls"
   >
     <input
+      className="search-input-control"
       onChange={[Function]}
       onKeyPress={[Function]}
       placeholder="Enter keyword..."
