@@ -45,7 +45,9 @@ export class GallerySection extends Component {
   }
 
   onSearch(text) {
-    this.props.dispatch(search(text));
+    if (text) {
+      this.props.dispatch(search(text));
+    }
   }
 
   onPreviousImage() {

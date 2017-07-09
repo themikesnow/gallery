@@ -1,7 +1,11 @@
 
 input[type=text], button {
     padding: 8px;
-
+    border-radius: $border-radius-base;
+    border: 1px $border-color-base solid;
+    box-shadow:         none;
+    -webkit-appearance: none;
+    
     &:focus {
         outline:0;
     }
@@ -9,9 +13,7 @@ input[type=text], button {
 
 button{
     background-color: darken($brand-secondary, 4%);
-    border: 1px $border-color-base solid;
-    line-height: 1.43857; 
-    min-width: 65px;
+    min-width: 80px;
 
     &.disabled{
         &:hover{
@@ -25,7 +27,5 @@ button{
             font-weight: 600;
         }
     }
-
-    
     
 }
