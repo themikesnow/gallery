@@ -10,8 +10,12 @@ import {} from './style/css/app.scss';
 
 const middleware = [thunk];
 
+const preloadedState = window.__PRELOADED_STATE__;   // eslint-disable-line no-underscore-dangle
+delete window.__PRELOADED_STATE__;                  // eslint-disable-line no-underscore-dangle
+
 const store = createStore(
   reducer,
+  preloadedState,
   applyMiddleware(...middleware),
 );
 
@@ -19,5 +23,5 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('content'),
+  document.getElementById('app'),
 );
