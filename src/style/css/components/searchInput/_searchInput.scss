@@ -1,9 +1,42 @@
 .search-input{
     text-align: center;
     input{
-        width: 60%;
+        width: 74%;
     }
     button{
-        width: 20%;
+        width: 15%;
     }
+}
+
+
+  /* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .search-input{
+        input{
+            width: 60%;
+        }
+        button{
+            width: 20%;
+        }
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
 }

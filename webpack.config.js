@@ -57,7 +57,8 @@ if(TARGET === 'start' || !TARGET) {
       hot: true,
       host: '0.0.0.0',
       inline: true,
-      port:8081
+      port:8081,
+      disableHostCheck: true
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin()
