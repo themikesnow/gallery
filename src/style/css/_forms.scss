@@ -1,12 +1,17 @@
 
 input[type=text], button {
-      padding: 8px;
+    padding: 8px;
+
+    &:focus {
+        outline:0;
+    }
 }
 
 button{
-    background-color: $brand-secondary;
+    background-color: darken($brand-secondary, 4%);
     border: 1px $border-color-base solid;
-    line-height: 1.43857;
+    line-height: 1.43857; 
+    min-width: 65px;
 
     &.disabled{
         &:hover{
@@ -14,8 +19,13 @@ button{
         }
     }
 
-    &:hover{
-        cursor: pointer;
+    &:not(.disabled){
+        &:hover{
+            cursor: pointer;
+            font-weight: 600;
+        }
     }
+
+    
     
 }
