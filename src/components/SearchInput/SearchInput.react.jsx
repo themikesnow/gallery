@@ -61,7 +61,7 @@ export default class SearchInput extends React.Component {
             onChange={this.onChange}
             onKeyPress={this.onKeyPressed}
           />
-          <button className={classnames({ 'btn btn-submit': true, disabled: this.props.isBusy || !this.state.value })} onClick={this.onClick}>
+          <button className={classnames({ 'btn btn-submit': true, disabled: this.props.isBusy || !this.state.value })} onClick={this.state.value && this.onClick}>
             {this.props.isBusy ? <Loading isIcon />
               : <span>Search</span>
             }
